@@ -1,6 +1,6 @@
 # README
 
-## Analysis of interactions and patterns of Oa and a collection of 28 partners in presence and absence of thiamin
+## Image analysis of Oa and a collection of 28 partners in presence and absence of thiamin
 
 Scripts developed by Alessia Del Panta at the University of Lausanne, Department of Fundamental Microbiology.
 
