@@ -28,4 +28,3 @@ dependencies:
   - seaborn
   - requests
   - statsmodels
-prefix: /home/alessia/anaconda3
