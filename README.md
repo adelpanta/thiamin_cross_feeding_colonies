@@ -12,6 +12,7 @@ Jupyter notebook tested on Ubuntu 22.04 on an Intel Core i10 processor under Pyt
 2. Assuming conda is installed, install the environments and dependencies using 
 `conda env create -f colony_patterns.yml` and
 `conda env create -f colony_patterns_glm.yml`
+Canghe the path ????
 4. Activate the environment by typing `conda activate mir430-distance-analysis`
 5. Launch a jupyter instance by typing `jupyter notebook`
 
