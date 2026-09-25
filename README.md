@@ -1,6 +1,6 @@
 # README
 
-## Image analysis of Oa and a collection of 28 partners in presence and absence of thiamin
+## Colony image analysis of Oa and a collection of 28 partners in presence and absence of thiamin
 
 Scripts developed by Alessia Del Panta at the University of Lausanne, Department of Fundamental Microbiology.
 
