@@ -1,20 +1,21 @@
 # README
 
-## Analysis script for the dynamics of mir430 loci
+## Analysis of interactions and patterns of Oa and a collection of 28 partners in presence and absence of thiamin
 
-Script developed by Alessia Del Panta at the University of Lausanne, Department of Fundamental Microbiology.
+Scripts developed by Alessia Del Panta at the University of Lausanne, Department of Fundamental Microbiology.
 
-Jupyter notebook tested on Ubuntu 22.04 on an Intel Core i10 processor under Python 3.7.11 using jupyter-core 4.9.2.
+Jupyter notebook tested on Ubuntu 22.04 on an Intel Core i10 processor under Python 3.7.11 using jupyter-core 4.9.2. !! CHECK !!
 
-### Instructions for Installation (typical install time, < 2 mins)
+### Instructions for Installation
 
-1. Place the `miR430-distance-analysis.ipynb`, `20230613-miR430-spots-raw-data.csv` and `mir430-distance-analysis.yml` files into a folder.
-2. Activate a terminal with conda installed and install the environment and dependencies using 
-`conda env create -f mir430-distance-analysis.yml`
-3. Activate the environment by typing `conda activate mir430-distance-analysis`
-4. Launch a jupyter instance by typing `jupyter notebook`
+1. Clone github repository !! INSTRUCTIONS !!
+2. Assuming conda is installed, install the environments and dependencies using 
+`conda env create -f colony_patterns.yml` and
+`conda env create -f colony_patterns_glm.yml`
+4. Activate the environment by typing `conda activate mir430-distance-analysis`
+5. Launch a jupyter instance by typing `jupyter notebook`
 
-### Instructions for use (typical runtime < 30s)
+### Instructions for use 
 
 1. In a jupyter notebook, open the `miR430-distance-analysis.ipynb` notebook, and execute. 
 2. The output of this script is provided in the form of four files:
