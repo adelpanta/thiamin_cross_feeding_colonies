@@ -1,0 +1,31 @@
+name: base
+channels:
+  - defaults
+dependencies:
+  - conda
+  - python=3.7
+  - conda-env
+  - conda-build
+  - conda-verify
+  - _ipyw_jlab_nb_ext_conf
+  - anaconda-navigator
+  - navigator-updater
+  - numpy
+  - spyder
+  - matplotlib
+  - pandas
+  - scipy
+  - openpyxl
+  - imageio
+  - numba
+  - odfpy
+  - python-igraph
+  - mamba
+  - pycairo
+  - jupyterthemes
+  - pyyaml
+  - distro
+  - seaborn
+  - requests
+  - statsmodels
+prefix: /home/alessia/anaconda3
