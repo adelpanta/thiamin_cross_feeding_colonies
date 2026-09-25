@@ -29,30 +29,47 @@ The data used by the analysis scripts are stored separately from this Git reposi
 The data stored on the NAS are organized as follows:
 
 ```text
-data/
-├── raw/
-│   ├── experiment_1/
-│   ├── experiment_2/
+colony_patterns/
+├── cfu_counts/
+├── colony_photos/
+├── docs/
+├── ilastik_projects/
+├── plate_holder_3d_prints/
+├── presentations/
+├── processed_data/
+│   ├── 20240205_D5_SET1/
+│   ├── 20240219_D5_SET2/
+│   ├── 20240304_D5_SET3/
+│   ├── 20240318_D5_SET4/
+│   ├── 20260601_D5_NOSALT/
+│   ├── 20260615_D5_GLUCOSE/
 │   └── ...
-├── processed/
-│   ├── ...
+├── raw_data/
+│   ├── 20240205_D5_SET1/
+│   ├── 20240219_D5_SET2/
+│   ├── 20240304_D5_SET3/
+│   ├── 20240318_D5_SET4/
+│   ├── 20260601_D5_NOSALT/
+│   ├── 20260615_D5_GLUCOSE/
 │   └── ...
-└── ...
 ```
 
-### Raw data
+### CFU counts
 
-`data/raw/` contains the original experimental data.
+`cfu_counts/` contains the CFU counts of mono- and cocultures at day 0 and day 6 for each data acquisition round.
 
-[Describe the important file types and naming conventions.]
+[Most files are saved in .ods (Libre Office spreadsheet format), some of the are saved in .csv as well. I need to check what is used in the scripts!]
 
-For example:
+The relevant data files for my thesis chapter are:
 
 ```text
-experiment_1/
-├── image_001.tif
-├── image_002.tif
-└── ...
+cfu_counts/
+├── 20240206_SET1.ods
+├── 
+├──              
+├──               
+├──              
+└──  
 ```
 
 ### Processed data
