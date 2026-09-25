@@ -6,6 +6,15 @@ Scripts developed by Alessia Del Panta at the University of Lausanne, Department
 
 Jupyter notebook tested on Ubuntu 22.04 on an Intel Core i10 processor under Python 3.7.11 using jupyter-core 4.9.2. !! CHECK !!
 
+### Pixel classification
+
+Pixel classification was performed using ilastik 1.4.0b21 with the Pixel
+Classification workflow. The trained ilastik project (`.ilp`) used for
+classification is provided in [path].
+
+Probability maps exported from ilastik (`.h5`) are provided in [path] and
+were used as input for the subsequent image-analysis pipeline.
+
 ### Instructions for Installation
 
 1. Clone github repository !! INSTRUCTIONS !!
