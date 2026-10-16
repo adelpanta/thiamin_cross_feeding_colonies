@@ -85,13 +85,26 @@ For example, microscopy images were classified using ilastik 1.4.0b21. The resul
 All analysis scripts and notebooks in this repository reference the data through a single variable, `proj_dir`, which must point to the root of the `colony_patterns/` folder on the NAS.
 
 **Where to set it:** 
+
 In the first cell of every jupyter notebook or towards the top of each script
 
-**Expected value:**
+**Current value:**
+
+```python
+proj_dir = pathlib.Path("/home/alessia/Documents/PhD/Colony-project")
+```
+or
+
+```python
+proj_dir = pathlib.Path(os.getcwd()).parent.parent
+```
+
+**Chage to:**
 
 ```python
 proj_dir = "/nasdcsr/FAC/FBM/DMF/smitri/nccr_microbiomes/D2c/colony_patterns"
 ```
+or to your local path
 
 ## 4. Reproducing the analysis
 
