@@ -91,6 +91,7 @@ In the first cell of every jupyter notebook or towards the top of each script
 
 ```python
 proj_dir = "/nasdcsr/FAC/FBM/DMF/smitri/nccr_microbiomes/D2c/colony_patterns"
+```
 
 ## 4. Reproducing the analysis
 
