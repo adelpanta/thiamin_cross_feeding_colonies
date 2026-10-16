@@ -4,7 +4,7 @@
 
 ## 1. Code and analysis scripts: Github repository contents
 
-This repository contains the code used to process and analyze the data associated with this project. The raw and processed data are stored separately and are **not included in this repository**.
+This repository contains the code used to process and analyze the data associated with the "Colony project". The raw and processed data are stored separately and are **not included in this repository**.
 
 The repository is organized as follows:
 
@@ -82,7 +82,7 @@ For example, microscopy images were classified using ilastik 1.4.0b21. The resul
 
 ## 3. Connecting the code to the data
 
-All analysis scripts and notebooks in this repository reference the data through a single variable, `proj_dir`, which must point to the root of the `colony_patterns/` folder on the NAS.
+All analysis scripts and notebooks in this repository reference the data through a single variable, `proj_dir`, which must point to the root of the `colony_patterns/` folder on the NAS or, if you locally downloaded the data, to the location where you saved it.
 
 **Where to set it:** 
 
