@@ -147,8 +147,8 @@ conda activate colony_patterns
 
 | Step | Input | Script/software | Output |
 |---|---|---|---|
-| 1. Pixel classification | Raw microscopy images stored in raw_data| ilastik 1.4.0b21 | `.h5` probability maps stored in processed_data |
-| 2. Create focus mask | Raw microscopy images | ANALYSIS_FOLDER/`focus_masks_DATASET_LABEL.py` | focus masks stored in processed_data |
+| 1. Pixel classification | Raw microscopy images stored in `raw_data`| ilastik 1.4.0b21 | `.h5` probability maps stored in `processed_data` |
+| 2. Create focus mask | Raw microscopy images stored in `raw_data` | ANALYSIS_FOLDER/`focus_masks_DATASET_LABEL.py` | focus masks stored in `processed_data` |
 | 3. Calculate interactions, mixing and sector sizes | CFU data. focus masks and raw ilastik probabilities | `ANALYSIS_FOLDER/`DATASET_LABEL.ipypy` for NOSALT and GLU, `AllSets_FA/postprocess_FA.ipynb` for FA datasets | csv file stored in ANALYSIS_FOLDER |
 | 4. Perform statistical analyses | csv file with interactions and image quantifcations | `ANALYSIS_FOLDER/analysis_DATASET_LABEL.ipypy`  | plots|
 | 5. Perform statistical analyses on full dataset (4 FA datasets)| csv file with interactions and image quantifications| `AllSets_FA/mixed_effect_models_FA.ipynb` | plots|
