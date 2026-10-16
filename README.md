@@ -31,6 +31,14 @@ repository/
 
 *TODO: check if ilastik_projects is saved on NAS. If it is, delete from here*
 
+## Analysis scripts
+
+Scripts in folder `analysis/` take the cfu data, raw images, and probability maps as input and return measurements of interactions, mixing and sector sizes, as well as other statistical analyses of mixing and sector sizes.
+
+## Code
+
+Folder `code/` contains scripts with functions that are read from the analysis scripts in folder `analysis/`
+
 ## 2. Raw and processed data: NAS folder contents
 
 The data used by the analysis scripts are stored on the Unil NAS under
@@ -111,107 +119,51 @@ or to your local path.
 
 ## 4. Reproducing the analysis
 
-The overall workflow is:
+To reproduce the analysis:
 
-```text
-Raw closeup image
-        │
-        ▼
-Normalized closeup image
-        │
-        ▼
-Preprocessing / ilastik classification
-        │
-        ▼
-Processed data / probability maps
-        │
-        ▼
-Image-analysis scripts
-        │
-        ▼
-Quantified measurements of intermixing and sector size, as well as of interactions (using cfu data)
-        │
-        ▼
-Further analyses
-```
-
-[Optionally list the scripts responsible for each step.]
-
-| Step | Input | Script/software | Output |
-|---|---|---|---|
-| 1. Pixel classification | Raw microscopy images | ilastik 1.4.0b21 | `.h5` probability maps |
-| 2. Image analysis | Probability maps | `script_name.py` | Quantified colony properties |
-| 3. Statistical analysis | Quantified data | `script_name.py` | Statistics and figures |
+1. Clone this repository.
+2. Download or obtain the associated data.
+4. Set the data path to the appropriate location on your system as indicated under **3. Connecting the code to the data**
+5. Create and activate the Conda environment followin the instructions under **Software environment**
+6. Run the analysis scripts in the order described under **Analysis workflow**.
 
 ## Software environment
 
 The Python environment required for the analysis can be created using:
 
 ```bash
-conda env create -f environment.yml
+conda env create -f colony_patterns.yml
 conda activate colony_patterns
 ```
 
-Pixel classification was performed separately using **ilastik 1.4.0b21**.
+## Analysis workflow
 
-## Reproducing the analysis
+1. Create probability masks for closeup images (stored in raw_data) using ILASTIK and store in processed_data 
+2. For each of the three datasets (FA, NOSALT, GLUCOSE) create focus masks
+3. For each of the three datasets (FA, NOSALT, GLUCOSE) calculate interactions, mixing and sector sizes
+4. For each of the three datasets (FA, NOSALT, GLUCOSE) perform statistical analyses
+5. Perform statistical analyses on the full dataset
+   
 
-To reproduce the analysis:
-
-1. Clone this repository.
-2. Download or obtain the associated data.
-3. Organize the data according to the directory structure described above.
-4. Set the data path to the appropriate location on your system.
-5. Create and activate the Conda environment.
-6. Run the analysis scripts in the order described under **Analysis workflow**.
-
-The analysis code uses relative paths derived from the configured data directory so that the location of the data can differ between systems.
-Scripts developed by Alessia Del Panta at the University of Lausanne, Department of Fundamental Microbiology.
-
-Jupyter notebook tested on Ubuntu 22.04 on an Intel Core i10 processor under Python 3.7.11 using jupyter-core 4.9.2. !! CHECK !!
+| Step | Input | Script/software | Output |
+|---|---|---|---|
+| 1. Pixel classification | Raw microscopy images stored in raw_data| ilastik 1.4.0b21 | `.h5` probability maps stored in processed_data |
+| 2. Create focus mask | Raw microscopy images | ANALYSIS_FOLDER/`focus_masks_DATASET_LABEL.py` | focus masks stored in processed_data |
+| 3. Calculate interactions, mixing and sector sizes | CFU data. focus masks and raw ilastik probabilities | `ANALYSIS_FOLDER/`DATASET_LABEL.ipypy` for NOSALT and GLU, `AllSets_FA/postprocess_FA.ipynb` for FA datasets | csv file stored in ANALYSIS_FOLDER |
+| 4. Perform statistical analyses | csv file with interactions and image quantifcations | `ANALYSIS_FOLDER/analysis_DATASET_LABEL.ipypy`  | plots|
+| 5. Perform statistical analyses on full dataset (4 FA datasets)| csv file with interactions and image quantifications| `AllSets_FA/mixed_effect_models_FA.ipynb` | plots|
+| 6. Perform statistical analyses on full dataset| csv files with interactions and image quantifications for all datasets| notebooks in `FullData` | plots|
 
 ### Pixel classification
 
-Pixel classification was performed using ilastik 1.4.0b21 with the Pixel
+Pixel classification was performed separately using **ilastik 1.4.0b21**.
+
 Classification workflow. The trained ilastik project (`.ilp`) used for
 classification is provided in [path].
 
 Probability maps exported from ilastik (`.h5`) are provided in [path] and
 were used as input for the subsequent image-analysis pipeline.
 
-### Instructions for Installation
 
-1. Clone github repository !! INSTRUCTIONS !!
-2. Assuming conda is installed, install the environments and dependencies using 
-`conda env create -f colony_patterns.yml` and
-`conda env create -f colony_patterns_glm.yml`
-Canghe the path ????
-4. Activate the environment by typing `conda activate mir430-distance-analysis`
-5. Launch a jupyter instance by typing `jupyter notebook`
 
-### Instructions for use 
 
-1. In a jupyter notebook, open the `miR430-distance-analysis.ipynb` notebook, and execute. 
-2. The output of this script is provided in the form of four files:
-    - `miR430-distance-dataframe.csv` contains the trajectories of the distances between the tracked loci.
-    - `miR430-speed-time-dataframe.csv` contains, for each trajectory, the duration of each of the condensed states, and the time it takes to go from the de-compacted to the condensed state, for each of the compacted states. 
-    - `miR430-summary-stats.csv` contains summary statistics such as the number of oscillations, or the average time in condensed state, separated into Nanog present/absent conditions. 
-    - `hp_tests.csv` contains the p-values for the Mann-Whitney tests performed to understand the role of Nanog in the dynamics of the loci. 
-
-### Running the software on your data
-
-This software was written to operate on the data generated for the current publication. In order to run this analysis on your own data, you must provide a file with the trajectories of miR430 loci. The header should be the following header:
-
-Date	Stage	Time	TrackID	Position.X	Position.Y	Position.Z	Nucleus.number	Condition
-
-Where:
-
-- "Date" is the date at which the loci where imaged
-- "Stage" is the stage at which the cell was at during imaging
-- "TrackID" is a unique ID for each allele within a nucleus
-- "Time" is an integer indicating the time step at which a locus was imaged
-- "Position.X", "Position.Y", "Position.Z" are the coordinates of an imaged lcus at a certain time step
-- "Nucleus.number" is a unique ID for each nucleus
-- "Condition" is either "Mutant" or "Inhibition"
-
-Then, run the script, updating the file path (variable "filename") and the time interval between frames (variable "delta_t"). 
