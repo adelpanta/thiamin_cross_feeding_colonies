@@ -2,6 +2,8 @@
 
 This repository contains the code used to process and analyze colony images of Oa grown in co-culture with 28 partner strains on FA (with and without thiamin) medium, in 3 biological replicates. The standard FA condition was acquired in four rounds. For a subset of 8 partners, colonies were additionally imaged on FA medium without salt and on glucose medium.
 
+**NAMING CONVENTION**
+
 The files associated with the four data acquisition rounds in FA medium contain the strings SET1-SET4. The files associated with the FA medium without salt, and the glucose medium contain the strings NOSALT and GLUCOSE, respectively. The string AllSets_FA refers to the combination of the 4 sets of data acquired in FA medium. 
 
 ## 1. Code and analysis scripts: Github repository contents
@@ -63,7 +65,7 @@ colony_patterns/
 
 `cfu_counts/raw_data/` contains the CFU counts of mono- and cocultures at day 0 and day 6 for each data of the 6 data acquisition rounds (4 rounds for FA, one round for NOSALT, one round for GLUCOSE).
 
-[All files are saved in .ods (Libre Office spreadsheet format), some of the are saved in .csv as well. Ideally we could only use one format!]
+*NOTE: All files are saved in .ods (Libre Office spreadsheet format), some of the are saved in .csv as well. Ideally we could only use one format!* 
 
 
 ### Processed data
@@ -98,7 +100,7 @@ proj_dir = pathlib.Path(os.getcwd()).parent.parent
 ```python
 proj_dir = "/nasdcsr/FAC/FBM/DMF/smitri/nccr_microbiomes/D2c/colony_patterns"
 ```
-or to your local path
+or to your local path.
 
 ## 4. Reproducing the analysis
 
