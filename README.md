@@ -1,6 +1,8 @@
 # Colony image analysis of Oa and a collection of 28 partners in presence and absence of thiamin
 
-*Brief description of the project and what the code in this repository is used for.*
+This repository contains the code used to process and analyze colony images of Oa grown in co-culture with 28 partner strains on FA (with and without thiamin) medium, in 3 biological replicates. The standard FA condition was acquired in four rounds. For a subset of 8 partners, colonies were additionally imaged on FA medium without salt and on glucose medium.
+
+The files associated with the four data acquisition rounds in FA medium contain the strings SET1-SET4. The files associated with the FA medium without salt, and the glucose medium contain the strings NOSALT and GLUCOSE, respectively. The string AllSets_FA refers to the combination of the 4 sets of data acquired in FA medium. 
 
 ## 1. Code and analysis scripts: Github repository contents
 
@@ -11,26 +13,31 @@ The repository is organized as follows:
 ```text
 repository/
 ├── analysis/
-│   ├── ...
-│   └── ...
+│   ├── 20260601_D5_NOSALT
+│   └── 20260615_D%_GLUCOSE
+│   └── AllSets_FA
+│   └── FullData
 ├── code/
 ├── ilastik_projects/
 │   ├── FAT-FA
-├── environment.yml
+├── colony_patterns.yml
+├── colony_patterns_glm.yml
 └── README.md
 ```
 
+*TODO: check if ilastik_projects is saved on NAS. If it is, delete from here*
+
 ## 2. Raw and processed data: NAS folder contents
 
-The data used by the analysis scripts are stored separately from this Git repository.
+The data used by the analysis scripts are stored on the Unil NAS under
 
-> The data is stored on the NAS under nasdcsr/FAC/FBM/DMF/smitri/nccr_microbiomes/D2c/colony_patterns/.
+> nasdcsr/FAC/FBM/DMF/smitri/nccr_microbiomes/D2c/colony_patterns/.
 
-The data stored on the NAS are organized as follows:
+It is organized as follows:
 
 ```text
 colony_patterns/
-├── cfu_counts/
+├── cfu_counts/raw_data/
 ├── colony_photos/
 ├── docs/
 ├── ilastik_projects/
@@ -43,7 +50,6 @@ colony_patterns/
 │   ├── 20240318_D5_SET4/
 │   ├── 20260601_D5_NOSALT/
 │   ├── 20260615_D5_GLUCOSE/
-│   └── ...
 ├── raw_data/
 │   ├── 20240205_D5_SET1/
 │   ├── 20240219_D5_SET2/
@@ -51,26 +57,14 @@ colony_patterns/
 │   ├── 20240318_D5_SET4/
 │   ├── 20260601_D5_NOSALT/
 │   ├── 20260615_D5_GLUCOSE/
-│   └── ...
 ```
 
 ### CFU counts
 
-`cfu_counts/` contains the CFU counts of mono- and cocultures at day 0 and day 6 for each data acquisition round.
+`cfu_counts/raw_data/` contains the CFU counts of mono- and cocultures at day 0 and day 6 for each data of the 6 data acquisition rounds (4 rounds for FA, one round for NOSALT, one round for GLUCOSE).
 
-[Most files are saved in .ods (Libre Office spreadsheet format), some of the are saved in .csv as well. I need to check what is used in the scripts!]
+[All files are saved in .ods (Libre Office spreadsheet format), some of the are saved in .csv as well. Ideally we could only use one format!]
 
-The relevant data files for my thesis chapter are:
-
-```text
-cfu_counts/
-├── 20240206_SET1.ods
-├── 
-├──              
-├──               
-├──              
-└──  
-```
 
 ### Processed data
 
