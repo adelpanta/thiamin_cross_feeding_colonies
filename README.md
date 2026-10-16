@@ -1,8 +1,8 @@
 # Colony image analysis of Oa and a collection of 28 partners in presence and absence of thiamin
 
-Brief description of the project and what the code in this repository is used for.
+*Brief description of the project and what the code in this repository is used for.*
 
-## 1. Repository contents
+## 1. Code and analysis scripts: Github repository contents
 
 This repository contains the code used to process and analyze the data associated with this project. The raw and processed data are stored separately and are **not included in this repository**.
 
@@ -13,14 +13,14 @@ repository/
 ├── analysis/
 │   ├── ...
 │   └── ...
-├── scripts/
-│   ├── ...
-│   └── ...
+├── code/
+├── ilastik_projects/
+│   ├── FAT-FA
 ├── environment.yml
 └── README.md
 ```
 
-## 2. Data availability and organization
+## 2. Raw and processed data: NAS folder contents
 
 The data used by the analysis scripts are stored separately from this Git repository.
 
@@ -80,43 +80,19 @@ cfu_counts/
 
 For example, microscopy images were classified using ilastik 1.4.0b21. The resulting probability maps (`.h5`) are used as input for the image-analysis scripts.
 
-## Connecting the code to the data
+## 3. Connecting the code to the data
 
-The data directory is not part of this repository. Before running the analysis, the user must specify the location of the data on their own system.
+All analysis scripts and notebooks in this repository reference the data through a single variable, `proj_dir`, which must point to the root of the `colony_patterns/` folder on the NAS.
 
-[CHOOSE THE APPROACH ACTUALLY USED BY THE CODE.]
+**Where to set it:** 
+In the first cell of every jupyter notebook or towards the top of each script
 
-For example, the project may have a configuration file containing:
-
-```text
-DATA_DIR=/path/to/data
-```
-
-or a Python variable:
+**Expected value:**
 
 ```python
-DATA_DIR = "/path/to/data"
-```
+proj_dir = "/nasdcsr/FAC/FBM/DMF/smitri/nccr_microbiomes/D2c/colony_patterns"
 
-Replace this path with the location of the data directory on your system.
-
-The analysis scripts then construct paths relative to `DATA_DIR`, rather than relying on absolute paths specific to the original computer.
-
-For example:
-
-```text
-DATA_DIR
-└── raw/
-    └── experiment_1/
-```
-
-corresponds to:
-
-```python
-DATA_DIR / "raw" / "experiment_1"
-```
-
-## Analysis workflow
+## 4. Reproducing the analysis
 
 The overall workflow is:
 
