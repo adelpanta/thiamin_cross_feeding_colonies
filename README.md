@@ -1,6 +1,6 @@
 # Colony image analysis of Oa and a collection of 28 partners in presence and absence of thiamin
 
-This repository contains the code used to process and analyze colony images of Oa grown in co-culture with 28 partner strains on FA (with and without thiamin) medium, in 3 biological replicates. The standard FA condition was acquired in four rounds. For a subset of 8 partners, colonies were additionally imaged on FA medium without salt and on glucose medium.
+This repository contains the code used to process and analyze colony images of Oa grown in co-culture with 28 partner strains on FA (with and without thiamin) medium, in 3 replicates. The standard FA condition was acquired in four rounds. For a subset of 8 partners, colonies were additionally imaged on FA medium without salt and on glucose medium.
 
 **NAMING CONVENTION**
 
