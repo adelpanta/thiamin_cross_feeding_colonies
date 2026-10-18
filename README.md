@@ -135,6 +135,7 @@ The Python environment required for the analysis can be created using:
 conda env create -f colony_patterns.yml
 conda activate colony_patterns
 ```
+*NOTE: use the colony_patterns_glm environment for the generalized linear model analyses, and coloy_pattners otherwise*
 
 ## Analysis workflow
 
@@ -156,15 +157,6 @@ conda activate colony_patterns
 | 5. Perform statistical analyses on full dataset (4 FA datasets)| csv file with interactions and image quantifications| `AllSets_FA/mixed_effect_models_FA.ipynb` | plots|
 | 6. Perform statistical analyses on full dataset| csv files with interactions and image quantifications for all datasets| notebooks in `FullData` | plots|
 
-### Pixel classification
-
-Pixel classification was performed separately using **ilastik 1.4.0b21**.
-
-Classification workflow. The trained ilastik project (`.ilp`) used for
-classification is provided in [path].
-
-Probability maps exported from ilastik (`.h5`) are provided in [path] and
-were used as input for the subsequent image-analysis pipeline.
 
 
 
