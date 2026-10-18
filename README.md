@@ -124,7 +124,7 @@ To reproduce the analysis:
 1. Clone this repository.
 2. Download or obtain the associated data.
 4. Set the data path to the appropriate location on your system as indicated under **3. Connecting the code to the data**
-5. Create and activate the Conda environment followin the instructions under **Software environment**
+5. Create and activate the Conda environment following the instructions under **Software environment**
 6. Run the analysis scripts in the order described under **Analysis workflow**.
 
 ## Software environment
@@ -140,7 +140,7 @@ conda activate colony_patterns
 ## Analysis workflow
 
 1. Create probability masks for closeup images using ILASTIK  
-2. For each of the three datasets (FA, NOSALT, GLUCOSE) create focus masks
+2. For each of the three datasets (FA, NOSALT, GLUCOSE) create focus masks (a mask determining which region of the colony is in focus)
 3. For each of the three datasets (FA, NOSALT, GLUCOSE) calculate interactions, mixing and sector sizes
 4. For each of the three datasets (FA, NOSALT, GLUCOSE) perform statistical analyses
 5. Perform statistical analyses on the full FA dataset
